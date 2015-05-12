@@ -3,3 +3,9 @@
 ################################################################################
 
 *.suo
+/Drivis/Drivis.XForms/Drivis.XForms/obj/Debug
+/Drivis/Drivis.XForms/Drivis.XForms.Droid/obj/Debug
+/Drivis/Drivis.XForms/Drivis.XForms.WinPhone/obj/Debug
+/Drivis/Drivis.XForms/Drivis.XForms.iOS/obj/iPhone/Debug
+/Drivis/packages
+*.user
