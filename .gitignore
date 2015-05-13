@@ -10,3 +10,9 @@
 /Drivis/packages
 *.user
 /Drivis/Drivis.Core/obj/Debug
+/Drivis/Drivis.XForms/Drivis.XForms/bin/Debug
+/Drivis/Drivis.XForms/Drivis.XForms.Droid/bin/Debug
+/Drivis/Drivis.XForms/Drivis.XForms.iOS/bin/iPhone/Debug
+/Drivis/Drivis.XForms/Drivis.XForms.WinPhone/Bin/x86/Debug
+/Drivis/Drivis.XForms/Drivis.XForms.WinPhone/obj/x86/Debug
+/Drivis/Drivis.Core/bin/Debug
