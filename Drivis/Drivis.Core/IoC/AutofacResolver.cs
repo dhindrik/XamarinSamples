@@ -18,7 +18,7 @@ namespace Drivis.Core.IoC
 
         public T Resolve<T>()
         {
-            _container.Resolve<T>();
+            return _container.Resolve<T>();
         }
     }
 }
