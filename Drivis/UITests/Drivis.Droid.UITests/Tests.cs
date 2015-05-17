@@ -5,6 +5,7 @@ using NUnit.Framework;
 using Xamarin.UITest;
 using Xamarin.UITest.Android;
 using Xamarin.UITest.Queries;
+using System.Threading.Tasks;
 
 namespace Drivis.Droid.UITests
 {
@@ -30,12 +31,16 @@ namespace Drivis.Droid.UITests
 		
 
         [Test]
-        public void LoadWeatherData()
+        public async void LoadWeatherData()
         {
+            app.Device.SetLocation(60.38300, 14.69475);
+
             app.Screenshot("First screen.");
 
             app.WaitForElement(x => x.Button());
             app.Tap(x => x.Button());
+
+            await Task.Delay(3000);
 
             app.Screenshot("List of weather");
         }
