@@ -43,6 +43,7 @@
     <Compile Include="IoC\AutofacResolver.cs" />
     <Compile Include="IoC\IResolver.cs" />
     <Compile Include="IoC\Resolver.cs" />
+    <Compile Include="Mvvm\Command.cs" />
     <Compile Include="Networking\IRestClient.cs" />
     <Compile Include="Networking\RestClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,5 +1,6 @@
 ﻿using Drivis.Core.Entities;
 using Drivis.Core.IoC;
+using Drivis.Core.Mvvm;
 using Drivis.Core.ServiceAgents;
 using Geolocator.Plugin;
 using System;
@@ -8,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Drivis.Core.ViewModels
 {
@@ -21,15 +23,28 @@ namespace Drivis.Core.ViewModels
             WeatherData = new ObservableCollection<WeatherItemModel>();
         }
 
-        public async Task Initialize()
+       
+
+        public ICommand LoadWeatherData
         {
-            if(CrossGeolocator.Current.IsGeolocationEnabled)
+            get
+            {
+                return new Command(async () =>
+                {
+                    await LoadData();
+                });
+            }
+        }
+
+        public async Task LoadData()
+        {
+            if (CrossGeolocator.Current.IsGeolocationEnabled)
             {
                 var position = await CrossGeolocator.Current.GetPositionAsync(10000);
 
                 var weatherData = await _weatherServiceAgent.GetWeather(position.Latitude, position.Longitude);
 
-                foreach(var item in weatherData.Take(24))
+                foreach (var item in weatherData.Take(24))
                 {
                     var data = Resolver.Resolve<WeatherItemModel>();
                     data.Temperature = item.Temperature;
@@ -37,9 +52,27 @@ namespace Drivis.Core.ViewModels
 
                     WeatherData.Add(data);
                 }
+
+                DataIsLoaded = true;
+            }
+        }
+        public ObservableCollection<WeatherItemModel> WeatherData { get; set; }
+
+        private bool _dataIsLoaded;
+        public bool DataIsLoaded
+        {
+            get { return _dataIsLoaded; }
+            set
+            {
+                _dataIsLoaded = value;
+                NotifyPropertyChanged("DataIsLoaded");
+                NotifyPropertyChanged("DataIsNotLoaded");
             }
         }
 
-        public ObservableCollection<WeatherItemModel> WeatherData { get; set; }
+        public bool DataIsNotLoaded
+        {
+            get { return !_dataIsLoaded; }
+        }
     }
 }

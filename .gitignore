@@ -16,3 +16,9 @@
 /Drivis/Drivis.XForms/Drivis.XForms.WinPhone/Bin/x86/Debug
 /Drivis/Drivis.XForms/Drivis.XForms.WinPhone/obj/x86/Debug
 /Drivis/Drivis.Core/bin/Debug
+*.userprefs
+/Drivis/UITests/obj/Debug
+/Drivis/UITests/bin/Debug
+/Drivis/Drivis.XForms/Drivis.XForms.WinPhone/Bin/Debug
+/Drivis/UITests/Drivis.Droid.UITests/obj/Debug
+/Drivis/UITests/Drivis.Droid.UITests/bin/Debug

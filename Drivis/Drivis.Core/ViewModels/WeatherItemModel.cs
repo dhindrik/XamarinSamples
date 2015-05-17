@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Drivis.Core.ViewModels
 {
@@ -34,6 +35,6 @@ namespace Drivis.Core.ViewModels
                 _temperature = value;
                 NotifyPropertyChanged("Temperature");
             }
-        }
+        }      
     }
 }

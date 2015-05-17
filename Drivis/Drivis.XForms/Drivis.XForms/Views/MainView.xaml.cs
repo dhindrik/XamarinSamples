@@ -28,8 +28,7 @@ namespace Drivis.XForms.Views
             base.OnAppearing();
 
             if(!_isInitialized)
-            {
-                ViewModel.Initialize();
+            {              
                 _isInitialized = true;
             }
         }

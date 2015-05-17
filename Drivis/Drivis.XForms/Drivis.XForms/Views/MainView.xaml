@@ -2,16 +2,19 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Drivis.XForms.Views.MainView" Title="Drivis">
-  <ListView ItemsSource="{Binding WeatherData}">
+  <StackLayout>
+  <Button Text="Load weather for current location" Command="{Binding LoadWeatherData}" IsVisible="{Binding DataIsNotLoaded}" />
+  <ListView ItemsSource="{Binding WeatherData}" IsVisible="{Binding DataIsLoaded}" HasUnevenRows="true">
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell>
           <StackLayout Padding="10">
             <Label Text="{Binding Time}" />
-            <Label Text="{Binding Temperature}" />
+            <Label Text="{Binding Temperature, StringFormat='{0}° C'}" />
           </StackLayout>
         </ViewCell>
       </DataTemplate>
     </ListView.ItemTemplate>
   </ListView>
+  </StackLayout>
 </ContentPage>
