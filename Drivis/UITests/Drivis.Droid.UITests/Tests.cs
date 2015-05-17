@@ -27,11 +27,18 @@ namespace Drivis.Droid.UITests
 				.StartApp ();
 		}
 
-		[Test]
-		public void AppLaunches ()
-		{
-			app.Screenshot ("First screen.");
-		}
+		
+
+        [Test]
+        public void LoadWeatherData()
+        {
+            app.Screenshot("First screen.");
+
+            app.WaitForElement(x => x.Button());
+            app.Tap(x => x.Button());
+
+            app.Screenshot("List of weather");
+        }
 	}
 }
 

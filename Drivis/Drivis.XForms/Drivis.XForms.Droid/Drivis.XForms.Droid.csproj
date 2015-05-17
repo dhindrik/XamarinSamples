@@ -14,13 +14,13 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
-    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
     <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
     <MandroidI18n />
     <JavaMaximumHeapSize>
     </JavaMaximumHeapSize>
     <NuGetPackageImportStamp>1c845eab</NuGetPackageImportStamp>
-    <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,8 +43,19 @@
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidStoreUncompressedFileExtensions>
     </AndroidStoreUncompressedFileExtensions>
-    <JavaOptions>
-    </JavaOptions>
+    <AndroidLinkSkip />
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <BundleAssemblies>False</BundleAssemblies>
+    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
+    <AndroidSupportedAbis>armeabi</AndroidSupportedAbis>
+    <MandroidI18n />
+    <Debugger>Xamarin</Debugger>
+    <AotAssemblies>False</AotAssemblies>
+    <EnableLLVM>False</EnableLLVM>
+    <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
+    <EnableProguard>False</EnableProguard>
+    <DevInstrumentationEnabled>False</DevInstrumentationEnabled>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
@@ -83,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="LinkerBeGone.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

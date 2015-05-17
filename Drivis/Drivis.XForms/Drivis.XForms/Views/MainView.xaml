@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Drivis.XForms.Views.MainView" Title="Drivis">
   <StackLayout>
-  <Button Text="Load weather for current location" Command="{Binding LoadWeatherData}" IsVisible="{Binding DataIsNotLoaded}" />
-  <ListView ItemsSource="{Binding WeatherData}" IsVisible="{Binding DataIsLoaded}" HasUnevenRows="true">
+  <Button Text="Load weather for current location" Command="{Binding LoadWeatherData}" IsVisible="{Binding DataIsNotLoaded}" StyleId="LoadWeather" />
+  <ListView ItemsSource="{Binding WeatherData}" IsVisible="{Binding DataIsLoaded}" HasUnevenRows="true" StyleId="WeatherList">
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell>
