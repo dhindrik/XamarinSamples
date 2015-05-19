@@ -3,14 +3,12 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-    <Button
-        android:id="@+id/LoadData"
+    <TextView
+        android:id="@+id/Time"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Load weather for your location" />
-    <ListView
-        android:id="@+id/WeatherList"
+        android:layout_height="fill_parent" />
+    <TextView
+        android:id="@+id/Temperature"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
+        android:layout_height="fill_parent" />
 </LinearLayout>
