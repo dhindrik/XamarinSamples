@@ -10,30 +10,17 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Drivis.Core.Entities;
+using Drivis.Core.ViewModels;
 
 namespace Drivis.Droid.Adapters
 {
     public class WeatherListAdapter : BaseAdapter
     {
-        private List<WeatherData> _weatherData;
+        private List<WeatherItemModel> _weatherData;
         
-        public WeatherListAdapter()
+        public WeatherListAdapter(List<WeatherItemModel> weatherList)
         {
-            _weatherData = new List<WeatherData>();
-        }
-
-        public void Add(WeatherData item)
-        {
-            _weatherData.Add(item);
-        }
-        public void Add(List<WeatherData> items)
-        {
-            _weatherData.AddRange(items);
-        }
-
-        public void Remove(WeatherData item)
-        {
-            _weatherData.Remove(item);
+            _weatherData = weatherList;
         }
 
 
@@ -63,7 +50,7 @@ namespace Drivis.Droid.Adapters
             var item = _weatherData[position];
 
             time.Text = item.Time.ToString();
-            temperature.Text = string.Format("{0}° C");
+            temperature.Text = string.Format("{0}° C", item.Temperature);
 
             return view;
         }
