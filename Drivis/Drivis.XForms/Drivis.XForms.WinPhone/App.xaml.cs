@@ -55,6 +55,8 @@ namespace Drivis.XForms.WinPhone
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
 
+            Bootstrapper.Initialize();
+
         }
 
         // Code to execute when the application is launching (eg, from Start)
